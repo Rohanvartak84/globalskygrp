@@ -179,19 +179,31 @@ const PARTNERS = [
 
 function Logo({ scrolled }) {
   return (
-    <a href="#home" className="flex items-center gap-2 group">
+    <a href="#home" className="flex items-center gap-3 group shrink-0">
+      {/* Logo mark — refined globe with orbit & accent */}
       <div className="relative">
-        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-blue via-brand-blue-light to-brand-orange flex items-center justify-center shadow-soft">
-          <Globe className="w-6 h-6 text-white" strokeWidth={2.2} />
+        <div className="w-12 h-12 lg:w-[52px] lg:h-[52px] rounded-2xl bg-gradient-to-br from-brand-blue via-[#1556b8] to-brand-blue-light flex items-center justify-center shadow-soft ring-1 ring-white/10 overflow-hidden">
+          <svg viewBox="0 0 48 48" className="w-7 h-7 lg:w-8 lg:h-8 text-white" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            {/* globe */}
+            <circle cx="24" cy="24" r="14" stroke="currentColor" strokeWidth="1.8" />
+            <path d="M10 24h28" stroke="currentColor" strokeWidth="1.6" />
+            <path d="M24 10c5 4.5 5 23.5 0 28M24 10c-5 4.5-5 23.5 0 28" stroke="currentColor" strokeWidth="1.6" />
+            {/* orbit dash */}
+            <path d="M6 30c8 6 28 6 36 0" stroke="#F5A623" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="2 3" />
+            {/* plane */}
+            <path d="M37 14l-9 4.5-3-1.2-1.6 1.2 2.4 2-1 2.5 1.6.4 2.2-2 8.6-3.5L37 14z" fill="#F5A623" />
+          </svg>
         </div>
-        <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-brand-green ring-2 ring-white" />
+        <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-brand-green ring-2 ring-white shadow-sm" />
       </div>
-      <div className="flex flex-col leading-tight">
-        <span className={`font-display text-lg sm:text-xl font-bold ${scrolled ? 'text-brand-blue' : 'text-white'}`}>
-          Global Sky
+
+      {/* Wordmark */}
+      <div className="flex flex-col leading-none">
+        <span className={`font-display text-[19px] lg:text-[21px] font-bold tracking-tight ${scrolled ? 'text-brand-blue' : 'text-white'}`}>
+          Global Sky <span className={scrolled ? 'text-brand-orange' : 'text-brand-orange'}>Group</span>
         </span>
-        <span className={`text-[10px] tracking-[0.2em] font-semibold ${scrolled ? 'text-brand-orange' : 'text-brand-orange'}`}>
-          GROUP
+        <span className={`mt-1.5 text-[9.5px] lg:text-[10px] font-semibold tracking-[0.32em] uppercase ${scrolled ? 'text-slate-500' : 'text-white/75'}`}>
+          Education · Visa · Travel
         </span>
       </div>
     </a>
@@ -201,7 +213,7 @@ function Logo({ scrolled }) {
 function DesktopNav({ scrolled }) {
   const [open, setOpen] = useState(null);
   return (
-    <nav className="hidden xl:flex items-center gap-1">
+    <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
       {NAV_ITEMS.map((item, idx) => (
         <div
           key={item.label}
@@ -211,10 +223,10 @@ function DesktopNav({ scrolled }) {
         >
           <a
             href={item.href || '#'}
-            className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-[14px] font-medium transition-all duration-200
+            className={`flex items-center gap-1 px-2.5 xl:px-3.5 py-2 rounded-lg text-[13px] xl:text-[14px] font-medium tracking-[0.01em] whitespace-nowrap transition-all duration-200
               ${scrolled
                 ? 'text-slate-700 hover:text-brand-blue hover:bg-blue-50'
-                : 'text-white/90 hover:text-white hover:bg-white/10'}`}
+                : 'text-white/95 hover:text-white hover:bg-white/10'}`}
           >
             {item.label}
             {item.children && <ChevronDown className="w-3.5 h-3.5 opacity-70" />}
@@ -279,7 +291,7 @@ function Navbar() {
         <div className="container flex items-center justify-between gap-4">
           <Logo scrolled={scrolled} />
           <DesktopNav scrolled={scrolled} />
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
             <a
               href="tel:+918140840069"
               className={`flex items-center gap-2 text-sm font-medium transition ${scrolled ? 'text-slate-700' : 'text-white'}`}
@@ -287,15 +299,15 @@ function Navbar() {
               <div className={`w-9 h-9 rounded-full flex items-center justify-center ${scrolled ? 'bg-blue-50 text-brand-blue' : 'bg-white/15 text-white'}`}>
                 <Phone className="w-4 h-4" />
               </div>
-              <span className="hidden 2xl:inline">+91 8140 840 069</span>
+              <span className="hidden xl:inline whitespace-nowrap">+91 8140 840 069</span>
             </a>
-            <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full px-5 shadow-soft hover:shadow-premium transition-all">
+            <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full px-4 xl:px-5 text-[13px] xl:text-sm shadow-soft hover:shadow-premium transition-all whitespace-nowrap">
               Book Consultation
             </Button>
           </div>
           <button
             onClick={() => setMobileOpen(true)}
-            className={`xl:hidden w-11 h-11 rounded-lg flex items-center justify-center transition ${scrolled ? 'bg-blue-50 text-brand-blue' : 'bg-white/15 text-white'}`}
+            className={`lg:hidden w-11 h-11 rounded-lg flex items-center justify-center transition ${scrolled ? 'bg-blue-50 text-brand-blue' : 'bg-white/15 text-white'}`}
             aria-label="Open menu"
           >
             <Menu className="w-5 h-5" />
@@ -312,14 +324,14 @@ function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] xl:hidden"
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] lg:hidden"
             />
             <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-[88vw] max-w-md bg-white z-[70] xl:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-[88vw] max-w-md bg-white z-[70] lg:hidden overflow-y-auto"
             >
               <div className="flex items-center justify-between p-5 border-b">
                 <Logo scrolled={true} />
@@ -477,25 +489,6 @@ function Hero() {
               <MessageCircle className="mr-1.5 w-4 h-4" />
               Chat on WhatsApp
             </Button>
-          </motion.div>
-
-          {/* Trust strip */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-            className="mt-12 flex flex-wrap gap-6 sm:gap-10 text-white/80 text-sm"
-          >
-            {[
-              { icon: ShieldCheck, label: 'ICEF Certified' },
-              { icon: Award, label: '99% Visa Success' },
-              { icon: Globe, label: '31+ Countries' },
-            ].map((t) => (
-              <div key={t.label} className="flex items-center gap-2">
-                <t.icon className="w-4 h-4 text-brand-orange" />
-                <span>{t.label}</span>
-              </div>
-            ))}
           </motion.div>
         </motion.div>
       </div>
