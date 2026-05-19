@@ -25,7 +25,7 @@ import {
 /* DATA                                                                */
 /* ------------------------------------------------------------------ */
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1543832923-44667a44c804?auto=format&fit=crop&w=2400&q=85';
+const HERO_IMG = '/hero-skyline.jpg';
 const CTA_BG = 'https://images.unsplash.com/photo-1564689510742-4e9c7584181d?auto=format&fit=crop&w=2000&q=80';
 
 const NAV_ITEMS = [
@@ -179,32 +179,25 @@ const PARTNERS = [
 
 function Logo({ scrolled }) {
   return (
-    <a href="#home" className="flex items-center gap-3.5 lg:gap-4 group shrink-0" aria-label="Global Sky Group">
-      {/* Icon mark — sharp, no glow, original proportions preserved */}
+    <a href="#home" className="flex items-center group shrink-0" aria-label="Global Sky Group">
+      {/* Light variant (full logo with white text) — for dark/transparent navbar */}
       <img
-        src="/gsg-icon.png"
-        alt=""
-        className="h-11 sm:h-12 lg:h-[54px] w-auto object-contain shrink-0"
+        src="/gsg-full-light.png"
+        alt="Global Sky Group — Indian at heart. Global in mind."
+        className={`h-11 sm:h-12 lg:h-14 w-auto object-contain select-none transition-opacity duration-300 ${
+          scrolled ? 'opacity-0 absolute pointer-events-none' : 'opacity-100 relative'
+        }`}
         draggable="false"
       />
-
-      {/* Wordmark — Sora Bold (closest to Adecion) */}
-      <div className="flex flex-col leading-none">
-        <span
-          className={`font-brand font-extrabold tracking-[0.04em] text-[15px] sm:text-[17px] lg:text-[18.5px] transition-colors duration-300 whitespace-nowrap ${
-            scrolled ? 'text-[#0B3D7C]' : 'text-white'
-          }`}
-        >
-          GLOBAL SKY GROUP
-        </span>
-        <span
-          className={`mt-[6px] font-sans font-medium italic text-[10px] sm:text-[10.5px] lg:text-[11px] tracking-tight transition-colors duration-300 whitespace-nowrap ${
-            scrolled ? 'text-slate-500' : 'text-white/75'
-          }`}
-        >
-          Indian at heart. Global in mind.
-        </span>
-      </div>
+      {/* Dark variant (full logo with dark blue text) — for scrolled white navbar */}
+      <img
+        src="/gsg-full-dark.png"
+        alt="Global Sky Group — Indian at heart. Global in mind."
+        className={`h-11 sm:h-12 lg:h-14 w-auto object-contain select-none transition-opacity duration-300 ${
+          scrolled ? 'opacity-100 relative' : 'opacity-0 absolute pointer-events-none'
+        }`}
+        draggable="false"
+      />
     </a>
   );
 }
@@ -410,11 +403,18 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-[100svh] flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex items-center overflow-hidden bg-[#061d44]">
+      {/* Background composition: dark navy left + cinematic skyline right */}
       <div className="absolute inset-0">
-        <img src={HERO_IMG} alt="Global travel" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-hero-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
+        {/* Cinematic skyline - positioned right, covers right 60% */}
+        <div
+          className="absolute inset-y-0 right-0 w-full lg:w-[62%] bg-cover bg-center lg:bg-left"
+          style={{ backgroundImage: `url(${HERO_IMG})` }}
+        />
+        {/* Dark navy left panel + smooth blend to skyline */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061d44] via-[#061d44]/95 to-transparent lg:from-[#061d44] lg:via-[#061d44]/80 lg:via-[35%] lg:to-transparent lg:to-[60%]" />
+        {/* Subtle top/bottom vignette for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#061d44]/40 via-transparent to-[#061d44]/70" />
       </div>
 
       <div className="container relative z-10 pt-32 pb-20 lg:pt-28">
@@ -422,16 +422,16 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="max-w-[58rem] xl:max-w-[64rem]"
+          className="max-w-[58rem] xl:max-w-[60rem]"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase mb-6"
+            className="inline-flex items-center text-brand-orange text-[11px] sm:text-xs font-bold tracking-[0.22em] uppercase mb-7"
           >
-            <Sparkles className="w-3.5 h-3.5 text-brand-orange" />
             Welcome to Global Sky Group
+            <span className="ml-3 w-12 h-px bg-brand-orange" />
           </motion.div>
 
           <motion.h1
@@ -440,10 +440,10 @@ function Hero() {
             transition={{ delay: 0.35, duration: 0.7 }}
             className="font-brand text-white text-[2.25rem] sm:text-5xl md:text-[3.75rem] lg:text-[4rem] xl:text-[4.5rem] font-extrabold leading-[1.04] tracking-[-0.02em] mb-5"
           >
-            GLOBAL <span className="text-brand-orange">MOBILITY</span>
+            GLOBAL <span className="text-white">MOBILITY</span>
             <br />
             <span className="whitespace-nowrap">
-              EDUCATION <span className="text-brand-orange">·</span> VISA <span className="text-brand-orange">·</span> TRAVEL
+              EDUCATION <span className="text-brand-orange">•</span> VISA <span className="text-brand-orange">•</span> TRAVEL
             </span>
           </motion.h1>
 
@@ -451,7 +451,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.7 }}
-            className="font-display italic text-xl sm:text-2xl md:text-3xl text-brand-orange/95 mb-5"
+            className="font-sans text-[#5da3ff] text-lg sm:text-xl md:text-2xl font-medium mb-6"
           >
             Indian at heart. Global in mind.
           </motion.p>
@@ -460,7 +460,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.7 }}
-            className="text-white/85 text-base sm:text-lg max-w-2xl leading-relaxed mb-9"
+            className="text-white/85 text-base sm:text-lg max-w-xl leading-relaxed mb-9"
           >
             We are a professionally managed global mobility and travel services organization
             offering ethical, transparent and customer-centric solutions across 31+ countries
