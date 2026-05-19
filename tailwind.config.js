@@ -18,6 +18,7 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-playfair)', 'Playfair Display', 'serif'],
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        brand: ['var(--font-sora)', 'Sora', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',

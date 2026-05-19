@@ -179,29 +179,27 @@ const PARTNERS = [
 
 function Logo({ scrolled }) {
   return (
-    <a href="#home" className="flex items-center gap-3 lg:gap-3.5 group shrink-0" aria-label="Global Sky Group">
-      {/* Icon mark — preserves exact original proportions */}
-      <div className="relative h-12 w-12 sm:h-[52px] sm:w-[52px] lg:h-[58px] lg:w-[58px] shrink-0 flex items-center justify-center">
-        <img
-          src="/gsg-icon.png"
-          alt=""
-          className="h-full w-full object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
-          draggable="false"
-        />
-      </div>
+    <a href="#home" className="flex items-center gap-3.5 lg:gap-4 group shrink-0" aria-label="Global Sky Group">
+      {/* Icon mark — sharp, no glow, original proportions preserved */}
+      <img
+        src="/gsg-icon.png"
+        alt=""
+        className="h-11 sm:h-12 lg:h-[54px] w-auto object-contain shrink-0"
+        draggable="false"
+      />
 
-      {/* Wordmark — typeset to match logo's brand style (bold sans-serif) */}
+      {/* Wordmark — Sora Bold (closest to Adecion) */}
       <div className="flex flex-col leading-none">
         <span
-          className={`font-sans font-extrabold tracking-[0.06em] text-[15px] sm:text-[17px] lg:text-[19px] transition-colors duration-300 ${
+          className={`font-brand font-extrabold tracking-[0.04em] text-[15px] sm:text-[17px] lg:text-[18.5px] transition-colors duration-300 whitespace-nowrap ${
             scrolled ? 'text-[#0B3D7C]' : 'text-white'
           }`}
         >
           GLOBAL SKY GROUP
         </span>
         <span
-          className={`mt-[5px] font-sans font-medium italic text-[10px] sm:text-[11px] lg:text-[11.5px] tracking-tight transition-colors duration-300 ${
-            scrolled ? 'text-slate-500' : 'text-white/80'
+          className={`mt-[6px] font-sans font-medium italic text-[10px] sm:text-[10.5px] lg:text-[11px] tracking-tight transition-colors duration-300 whitespace-nowrap ${
+            scrolled ? 'text-slate-500' : 'text-white/75'
           }`}
         >
           Indian at heart. Global in mind.
@@ -292,17 +290,17 @@ function Navbar() {
         <div className="container flex items-center justify-between gap-4">
           <Logo scrolled={scrolled} />
           <DesktopNav scrolled={scrolled} />
-          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-5">
             <a
               href="tel:+918140840069"
-              className={`flex items-center gap-2 text-sm font-medium transition ${scrolled ? 'text-slate-700' : 'text-white'}`}
+              className={`flex items-center gap-2.5 text-sm font-medium transition ${scrolled ? 'text-slate-700' : 'text-white'}`}
             >
-              <div className={`w-9 h-9 rounded-full flex items-center justify-center ${scrolled ? 'bg-blue-50 text-brand-blue' : 'bg-white/15 text-white'}`}>
+              <div className={`w-9 h-9 rounded-full flex items-center justify-center transition ${scrolled ? 'bg-blue-50 text-brand-blue' : 'bg-white/15 text-white ring-1 ring-white/15'}`}>
                 <Phone className="w-4 h-4" />
               </div>
-              <span className="hidden xl:inline whitespace-nowrap">+91 8140 840 069</span>
+              <span className="hidden xl:inline whitespace-nowrap font-semibold tracking-tight">+91 8140 840 069</span>
             </a>
-            <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full px-4 xl:px-5 text-[13px] xl:text-sm shadow-soft hover:shadow-premium transition-all whitespace-nowrap">
+            <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full h-11 px-5 xl:px-6 text-[13px] xl:text-sm shadow-soft hover:shadow-premium transition-all whitespace-nowrap">
               Book Consultation
             </Button>
           </div>
@@ -424,7 +422,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="max-w-4xl"
+          className="max-w-[58rem] xl:max-w-[64rem]"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -440,12 +438,12 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.7 }}
-            className="font-display text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.2rem] font-bold leading-[1.05] mb-5"
+            className="font-brand text-white text-[2.25rem] sm:text-5xl md:text-[3.75rem] lg:text-[4rem] xl:text-[4.5rem] font-extrabold leading-[1.04] tracking-[-0.02em] mb-5"
           >
             GLOBAL <span className="text-brand-orange">MOBILITY</span>
             <br />
-            <span className="text-white">
-              EDUCATION <span className="text-brand-orange">•</span> VISA <span className="text-brand-orange">•</span> TRAVEL
+            <span className="whitespace-nowrap">
+              EDUCATION <span className="text-brand-orange">·</span> VISA <span className="text-brand-orange">·</span> TRAVEL
             </span>
           </motion.h1>
 
@@ -715,7 +713,7 @@ function Destinations() {
                 <img
                   src={d.image}
                   alt={d.name}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1200ms]"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/30 to-slate-900/0" />
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/0 to-brand-blue/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -1058,7 +1056,7 @@ function Footer() {
                 draggable="false"
               />
               <div className="flex flex-col leading-none">
-                <span className="font-sans font-extrabold tracking-[0.06em] text-[19px] text-white">
+                <span className="font-brand font-extrabold tracking-[0.04em] text-[18px] text-white">
                   GLOBAL SKY GROUP
                 </span>
                 <span className="mt-1.5 font-sans font-medium italic text-[11.5px] tracking-tight text-white/70">

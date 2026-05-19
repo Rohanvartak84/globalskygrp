@@ -1,5 +1,5 @@
 import './globals.css';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Sora } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,6 +15,13 @@ const playfair = Playfair_Display({
   weight: ['400', '500', '600', '700', '800', '900'],
 });
 
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-sora',
+  display: 'swap',
+  weight: ['600', '700', '800'],
+});
+
 export const metadata = {
   title: 'Global Sky Group — Education • Visa • Travel',
   description:
@@ -23,7 +30,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${sora.variable}`}>
       <body className="min-h-screen bg-background text-foreground antialiased">
         {children}
       </body>
