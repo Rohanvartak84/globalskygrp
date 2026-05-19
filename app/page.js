@@ -179,31 +179,32 @@ const PARTNERS = [
 
 function Logo({ scrolled }) {
   return (
-    <a href="#home" className="flex items-center gap-3 group shrink-0">
-      {/* Logo mark — refined globe with orbit & accent */}
-      <div className="relative">
-        <div className="w-12 h-12 lg:w-[52px] lg:h-[52px] rounded-2xl bg-gradient-to-br from-brand-blue via-[#1556b8] to-brand-blue-light flex items-center justify-center shadow-soft ring-1 ring-white/10 overflow-hidden">
-          <svg viewBox="0 0 48 48" className="w-7 h-7 lg:w-8 lg:h-8 text-white" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            {/* globe */}
-            <circle cx="24" cy="24" r="14" stroke="currentColor" strokeWidth="1.8" />
-            <path d="M10 24h28" stroke="currentColor" strokeWidth="1.6" />
-            <path d="M24 10c5 4.5 5 23.5 0 28M24 10c-5 4.5-5 23.5 0 28" stroke="currentColor" strokeWidth="1.6" />
-            {/* orbit dash */}
-            <path d="M6 30c8 6 28 6 36 0" stroke="#F5A623" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="2 3" />
-            {/* plane */}
-            <path d="M37 14l-9 4.5-3-1.2-1.6 1.2 2.4 2-1 2.5 1.6.4 2.2-2 8.6-3.5L37 14z" fill="#F5A623" />
-          </svg>
-        </div>
-        <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-brand-green ring-2 ring-white shadow-sm" />
+    <a href="#home" className="flex items-center gap-3 lg:gap-3.5 group shrink-0" aria-label="Global Sky Group">
+      {/* Icon mark — preserves exact original proportions */}
+      <div className="relative h-12 w-12 sm:h-[52px] sm:w-[52px] lg:h-[58px] lg:w-[58px] shrink-0 flex items-center justify-center">
+        <img
+          src="/gsg-icon.png"
+          alt=""
+          className="h-full w-full object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+          draggable="false"
+        />
       </div>
 
-      {/* Wordmark */}
+      {/* Wordmark — typeset to match logo's brand style (bold sans-serif) */}
       <div className="flex flex-col leading-none">
-        <span className={`font-display text-[19px] lg:text-[21px] font-bold tracking-tight ${scrolled ? 'text-brand-blue' : 'text-white'}`}>
-          Global Sky <span className={scrolled ? 'text-brand-orange' : 'text-brand-orange'}>Group</span>
+        <span
+          className={`font-sans font-extrabold tracking-[0.06em] text-[15px] sm:text-[17px] lg:text-[19px] transition-colors duration-300 ${
+            scrolled ? 'text-[#0B3D7C]' : 'text-white'
+          }`}
+        >
+          GLOBAL SKY GROUP
         </span>
-        <span className={`mt-1.5 text-[9.5px] lg:text-[10px] font-semibold tracking-[0.32em] uppercase ${scrolled ? 'text-slate-500' : 'text-white/75'}`}>
-          Education · Visa · Travel
+        <span
+          className={`mt-[5px] font-sans font-medium italic text-[10px] sm:text-[11px] lg:text-[11.5px] tracking-tight transition-colors duration-300 ${
+            scrolled ? 'text-slate-500' : 'text-white/80'
+          }`}
+        >
+          Indian at heart. Global in mind.
         </span>
       </div>
     </a>
@@ -1049,15 +1050,20 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 mb-14">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-blue via-brand-blue-light to-brand-orange flex items-center justify-center">
-                <Globe className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <div className="font-display text-xl font-bold text-white">Global Sky Group</div>
-                <div className="text-[10px] tracking-[0.25em] font-semibold text-brand-orange">
-                  EDUCATION • VISA • TRAVEL
-                </div>
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/gsg-icon.png"
+                alt=""
+                className="h-14 w-14 object-contain"
+                draggable="false"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="font-sans font-extrabold tracking-[0.06em] text-[19px] text-white">
+                  GLOBAL SKY GROUP
+                </span>
+                <span className="mt-1.5 font-sans font-medium italic text-[11.5px] tracking-tight text-white/70">
+                  Indian at heart. Global in mind.
+                </span>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
