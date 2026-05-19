@@ -25,7 +25,7 @@ import {
 /* DATA                                                                */
 /* ------------------------------------------------------------------ */
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1660787500457-1b3cfd29491b?auto=format&fit=crop&w=2000&q=80';
+const HERO_IMG = 'https://images.unsplash.com/photo-1543832923-44667a44c804?auto=format&fit=crop&w=2400&q=85';
 const CTA_BG = 'https://images.unsplash.com/photo-1564689510742-4e9c7584181d?auto=format&fit=crop&w=2000&q=80';
 
 const NAV_ITEMS = [
@@ -417,10 +417,10 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase mb-6"
           >
             <Sparkles className="w-3.5 h-3.5 text-brand-orange" />
-            Trusted by 50,000+ Global Travellers & Students
+            Welcome to Global Sky Group
           </motion.div>
 
           <motion.h1
@@ -451,9 +451,9 @@ function Hero() {
             transition={{ delay: 0.7, duration: 0.7 }}
             className="text-white/85 text-base sm:text-lg max-w-2xl leading-relaxed mb-9"
           >
-            For 18+ years Global Sky Group has been the trusted partner for premium study abroad,
-            visa, and luxury travel solutions — guiding ambitious Indians to 31+ countries with
-            uncompromising care, expertise, and class.
+            We are a professionally managed global mobility and travel services organization
+            offering ethical, transparent and customer-centric solutions across 31+ countries
+            worldwide.
           </motion.p>
 
           <motion.div
