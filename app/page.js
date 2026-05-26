@@ -25,7 +25,8 @@ import {
 /* DATA                                                                */
 /* ------------------------------------------------------------------ */
 
-const HERO_IMG = '/hero-skyline.jpg';
+const HERO_IMG = '/hero-skyline.png';
+//const HERO_IMG = '/hero-skyline.jpg';
 const CTA_BG = 'https://images.unsplash.com/photo-1564689510742-4e9c7584181d?auto=format&fit=crop&w=2000&q=80';
 
 const NAV_ITEMS = [
@@ -67,10 +68,10 @@ const SERVICES = [
     image: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=900&q=80',
     accent: 'green',
     points: [
-      'Top-ranked university admissions',
-      'Scholarship & funding guidance',
-      'Pre-departure & visa support',
-      'PR & immigration pathways',
+      'Study Aboard Counselling',
+      'University Admissions',
+      'Visa Guidance & Support',
+      'Career & PR Pathways',
     ],
   },
   {
@@ -79,10 +80,10 @@ const SERVICES = [
     image: 'https://images.pexels.com/photos/7079773/pexels-photo-7079773.jpeg?auto=compress&cs=tinysrgb&w=900',
     accent: 'orange',
     points: [
-      'Curated luxury holiday packages',
-      'Honeymoon & family escapes',
-      'Group tours across 6 continents',
-      'Visa-included travel bundles',
+      'International Holiday Packages',
+      'Luxury & Customized Tours',
+      'Cruises & Group Tours',
+      'MICE & Corporate Travel',
     ],
   },
   {
@@ -91,10 +92,10 @@ const SERVICES = [
     image: 'https://images.unsplash.com/photo-1655722725332-9925c96dd627?auto=format&fit=crop&w=900&q=80',
     accent: 'blue',
     points: [
-      'Tourist, business & student visas',
-      'Work permit & dependent visas',
-      'Document profiling experts',
-      '99% approval success rate',
+      'Tourist & Visitor Visas',
+      'Business & Family Visas',
+      'Document Assistance',
+      'High Success Rate',
     ],
   },
 ];
@@ -182,7 +183,7 @@ function Logo({ scrolled }) {
     <a href="#home" className="flex items-center group shrink-0" aria-label="Global Sky Group">
       {/* Light variant (full logo with white text) — for dark/transparent navbar */}
       <img
-        src="/gsg-full-light.png"
+        src="/logo-dark-bg.png"
         alt="Global Sky Group — Indian at heart. Global in mind."
         className={`h-11 sm:h-12 lg:h-14 w-auto object-contain select-none transition-opacity duration-300 ${
           scrolled ? 'opacity-0 absolute pointer-events-none' : 'opacity-100 relative'
@@ -191,7 +192,7 @@ function Logo({ scrolled }) {
       />
       {/* Dark variant (full logo with dark blue text) — for scrolled white navbar */}
       <img
-        src="/gsg-full-dark.png"
+        src="/logo-light-bg.png"
         alt="Global Sky Group — Indian at heart. Global in mind."
         className={`h-11 sm:h-12 lg:h-14 w-auto object-contain select-none transition-opacity duration-300 ${
           scrolled ? 'opacity-100 relative' : 'opacity-0 absolute pointer-events-none'
@@ -205,8 +206,9 @@ function Logo({ scrolled }) {
 function DesktopNav({ scrolled }) {
   const [open, setOpen] = useState(null);
   return (
-    <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
-      {NAV_ITEMS.map((item, idx) => (
+    //<nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+    <nav className="hidden max-xl:!hidden xl:!flex items-center gap-0 xl:gap-0.5 2xl:gap-1 min-w-0">
+	  {NAV_ITEMS.map((item, idx) => (
         <div
           key={item.label}
           className="relative"
@@ -215,8 +217,9 @@ function DesktopNav({ scrolled }) {
         >
           <a
             href={item.href || '#'}
-            className={`flex items-center gap-1 px-2.5 xl:px-3.5 py-2 rounded-lg text-[13px] xl:text-[14px] font-medium tracking-[0.01em] whitespace-nowrap transition-all duration-200
-              ${scrolled
+            //className={`flex items-center gap-1 px-2.5 xl:px-3.5 py-2 rounded-lg text-[13px] xl:text-[14px] font-medium tracking-[0.01em] whitespace-nowrap transition-all duration-200
+            className={`flex items-center gap-1 px-1.5 xl:px-2 2xl:px-3.5 py-2 rounded-lg text-[11px] xl:text-[12px] 2xl:text-[14px] font-medium tracking-[0.01em] whitespace-nowrap transition-all duration-200
+				${scrolled
                 ? 'text-slate-700 hover:text-brand-blue hover:bg-blue-50'
                 : 'text-white/95 hover:text-white hover:bg-white/10'}`}
           >
@@ -408,16 +411,17 @@ function Hero() {
       <div className="absolute inset-0">
         {/* Cinematic skyline - positioned right, covers right 60% */}
         <div
-          className="absolute inset-y-0 right-0 w-full lg:w-[62%] bg-cover bg-center lg:bg-left"
-          style={{ backgroundImage: `url(${HERO_IMG})` }}
+         className="absolute inset-y-0 right-0 w-full lg:w-[60%] bg-cover bg-center lg:bg-left"
+         style={{ backgroundImage: `url(${HERO_IMG})`}}
         />
         {/* Dark navy left panel + smooth blend to skyline */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061d44] via-[#061d44]/95 to-transparent lg:from-[#061d44] lg:via-[#061d44]/80 lg:via-[35%] lg:to-transparent lg:to-[60%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061d44] from-[25%] via-[#061d44]/95 via-[38%] to-transparent to-[58%]"
+        />
         {/* Subtle top/bottom vignette for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#061d44]/40 via-transparent to-[#061d44]/70" />
       </div>
 
-      <div className="container relative z-10 pt-32 pb-20 lg:pt-28">
+	  <div className="container relative z-10 pt-32 pb-20 lg:pt-28">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -442,7 +446,7 @@ function Hero() {
           >
             GLOBAL <span className="text-white">MOBILITY</span>
             <br />
-            <span className="whitespace-nowrap">
+            <span className="whitespace-normal md:whitespace-nowrap">
               EDUCATION <span className="text-brand-orange">•</span> VISA <span className="text-brand-orange">•</span> TRAVEL
             </span>
           </motion.h1>
@@ -607,7 +611,7 @@ function Services() {
     <section className="py-20 lg:py-28 bg-brand-bg">
       <div className="container">
         <SectionTitle
-          eyebrow="Our Premium Services"
+          eyebrow="Our Companies"
           eyebrowColor="blue"
           title="Three Pillars of Global Mobility"
           subtitle="From the first counselling session to the day you land — our integrated services give you a single, trusted partner for everything beyond borders."
@@ -1050,12 +1054,12 @@ function Footer() {
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/gsg-icon.png"
+				src="/logo-light-bg.png"
                 alt=""
                 className="h-14 w-14 object-contain"
                 draggable="false"
               />
-              <div className="flex flex-col leading-none">
+              *<div className="flex flex-col leading-none">
                 <span className="font-brand font-extrabold tracking-[0.04em] text-[18px] text-white">
                   GLOBAL SKY GROUP
                 </span>
