@@ -108,11 +108,11 @@ const STATS = [
 ];
 
 const DESTINATIONS = [
-  { name: 'United Kingdom', tag: 'World-class universities', image: 'https://images.unsplash.com/photo-1662154989572-716c415ea9d7?auto=format&fit=crop&w=1200&q=80' },
-  { name: 'Australia', tag: 'Quality of life', image: 'https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=1200&q=80' },
-  { name: 'Canada', tag: 'PR friendly nation', image: 'https://images.unsplash.com/photo-1511831030-bec461ccd88e?auto=format&fit=crop&w=1200&q=80' },
-  { name: 'United States', tag: 'Ivy league dreams', image: 'https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=1200&q=80' },
-  { name: 'Europe', tag: 'Schengen & beyond', image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80' },
+  { name: 'United Kingdom', tag: 'Study In', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg', image: 'https://images.unsplash.com/photo-1662154989572-716c415ea9d7?auto=format&fit=crop&w=1200&q=80' },
+  { name: 'Australia', tag: 'Study In', flag: 'https://hatscripts.github.io/circle-flags/flags/au.svg', image: 'https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?auto=format&fit=crop&w=1200&q=80' },
+  { name: 'Canada', tag: 'Study In', flag: 'https://hatscripts.github.io/circle-flags/flags/ca.svg', image: 'https://images.unsplash.com/photo-1511831030-bec461ccd88e?auto=format&fit=crop&w=1200&q=80' },
+  { name: 'United States', tag: 'Study In', flag: 'https://hatscripts.github.io/circle-flags/flags/us.svg', image: 'https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=1200&q=80' },
+  { name: 'Europe', tag: 'Study In', flag: 'https://hatscripts.github.io/circle-flags/flags/eu.svg', image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80' },
 ];
 
 const WHY_US = [
@@ -588,7 +588,7 @@ function ServiceCard({ s, idx }) {
       </div>
       <div className={`h-1 w-full ${palette.bar}`} />
       <div className="p-7">
-        <h3 className="font-display text-2xl font-bold text-slate-900 mb-4">{s.title}</h3>
+        <h3 className="font-sans text-2xl font-bold text-slate-900 mb-4">{s.title}</h3>
         <ul className="space-y-2.5 mb-6">
           {s.points.map((p) => (
             <li key={p} className="flex items-start gap-2.5 text-slate-600 text-[15px]">
@@ -694,7 +694,7 @@ function Destinations() {
     <section className="py-20 lg:py-28 bg-white">
       <div className="container">
         <SectionTitle
-          eyebrow="Popular Destinations"
+          eyebrow="Popular Destinations for Study"
           eyebrowColor="orange"
           title="Where Will You Go Next?"
           subtitle="Hand-picked countries, curated programs and elite university partnerships across the world's most aspirational destinations."
@@ -722,16 +722,15 @@ function Destinations() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/30 to-slate-900/0" />
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/0 to-brand-blue/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold tracking-wider uppercase">
-                  Study & Travel
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+				 <div className="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/90 text-lg flex items-center justify-center shadow-soft">
+                  <img src={d.flag} alt={`${d.name} flag`} className="w-9 h-9 rounded-full object-cover" />
+				</div>
+				<div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <div className="flex items-center gap-2 text-white/70 text-xs mb-2">
                     <MapPin className="w-3.5 h-3.5" />
                     <span className="uppercase tracking-wider">{d.tag}</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold mb-3">{d.name}</h3>
+                  <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-3">{d.name}</h3>
                   <div className="flex items-center gap-2 text-brand-orange font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     Explore <ArrowRight className="w-4 h-4" />
                   </div>
@@ -739,6 +738,12 @@ function Destinations() {
               </motion.a>
             );
           })}
+        </div>
+		<div className="flex justify-center mt-10">
+          <Button className="font-sans bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold rounded-full px-10 h-10">
+            View All Destinations
+            <ArrowRight className="ml-1.5 w-4 h-4" />
+          </Button>
         </div>
       </div>
     </section>
@@ -756,7 +761,7 @@ function WhyChooseUs() {
         <SectionTitle
           eyebrow="Why Choose Us"
           eyebrowColor="green"
-          title="Built On Trust. Driven By Results."
+          title="Why To Choose Global Sky Group?"
           subtitle="Eighteen years of obsessing over the details that make global journeys truly seamless."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -773,7 +778,7 @@ function WhyChooseUs() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-blue-light flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-soft">
                 <f.icon className="w-7 h-7 text-white" strokeWidth={2.2} />
               </div>
-              <h3 className="font-display text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
+              <h3 className="font-sans text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-orange to-brand-green opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl" />
             </motion.div>
@@ -796,7 +801,7 @@ function Testimonials() {
 
       <div className="container relative z-10">
         <SectionTitle
-          eyebrow="Loved By Travellers & Students"
+          eyebrow="Success Stories"
           eyebrowColor="orange"
           title="Stories From Across The Globe"
           subtitle="From Toronto classrooms to Maldivian sunsets — hear from people whose journeys we've had the privilege to design."
