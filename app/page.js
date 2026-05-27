@@ -297,7 +297,7 @@ function Navbar() {
               <span className="hidden xl:inline whitespace-nowrap font-semibold tracking-tight">+91 8238 061 444</span>
             </a>
             <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full h-11 px-5 xl:px-6 text-[13px] xl:text-sm shadow-soft hover:shadow-premium transition-all whitespace-nowrap">
-              Book Consultation
+              <a href='#contact'>Book Consultation</a>
             </Button>
           </div>
           <button
@@ -389,7 +389,7 @@ function Navbar() {
                   <Phone className="w-4 h-4" /> +91 8238 061 444
                 </a>
                 <Button className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full py-6">
-                  Book Free Consultation
+                  <a href="#contact" onClick={() => setMobileOpen(false)}>Book Free Consultation</a>
                 </Button>
               </div>
             </motion.aside>
@@ -481,17 +481,25 @@ function Hero() {
               size="lg"
               className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full px-8 py-6 text-base shadow-premium hover:scale-[1.02] transition-all group"
             >
-              Book Free Consultation
+              <a href="#contact">Book Free Consultation</a>
               <ArrowRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               size="lg"
-              variant="outline"
+              asChild
+			  variant="outline"
               className="bg-white/10 border-white/30 backdrop-blur-md text-white hover:bg-white hover:text-brand-green font-semibold rounded-full px-8 py-6 text-base transition-all"
             >
-              <MessageCircle className="mr-1.5 w-4 h-4" />
-              Chat on WhatsApp
-            </Button>
+            <a
+                href="https://wa.me/918140840069"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center mr-1.5"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Chat on WhatsApp
+              </a>
+	       </Button>
           </motion.div>
         </motion.div>
       </div>
