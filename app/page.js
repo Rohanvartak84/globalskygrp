@@ -128,7 +128,7 @@ const TESTIMONIALS = [
     name: 'Aarav Mehta',
     role: 'MSc Student, University of Toronto',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/120?img=12',
+    //avatar: 'https://i.pravatar.cc/120?img=12',
     quote:
       'Global Sky Group made my Canadian student visa journey effortless. Their counsellors guided me through SOPs, scholarships and visa filing with unmatched professionalism.',
   },
@@ -136,7 +136,7 @@ const TESTIMONIALS = [
     name: 'Priya Kapoor',
     role: 'Luxury Europe Tour, 2024',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/120?img=47',
+    //avatar: 'https://i.pravatar.cc/120?img=47',
     quote:
       'Our 14-day Italy and Switzerland honeymoon was magical. Every hotel, every transfer, every reservation was flawless. Truly a premium experience.',
   },
@@ -144,7 +144,7 @@ const TESTIMONIALS = [
     name: 'Rohan Shah',
     role: 'PR Visa, Australia',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/120?img=33',
+    //avatar: 'https://i.pravatar.cc/120?img=33',
     quote:
       'After two prior rejections, the GSG immigration team got me my Australian PR within 9 months. Their documentation expertise is simply world-class.',
   },
@@ -152,7 +152,7 @@ const TESTIMONIALS = [
     name: 'Ananya Iyer',
     role: 'Undergraduate, UK',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/120?img=49',
+    //avatar: 'https://i.pravatar.cc/120?img=49',
     quote:
       'I had no idea where to apply. GSG matched me with 5 top UK universities, secured a 40% scholarship and prepared me for everything from IELTS to arrival.',
   },
@@ -160,7 +160,7 @@ const TESTIMONIALS = [
     name: 'Vikram Singh',
     role: 'Family Holiday, Dubai & Maldives',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/120?img=68',
+    //avatar: 'https://i.pravatar.cc/120?img=68',
     quote:
       'The attention to detail was unbelievable. Personalised concierge, surprise dinner, business class upgrades — Global Sky Group truly redefines travel.',
   },
@@ -799,7 +799,7 @@ function Testimonials() {
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand-orange/5 blur-3xl" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-brand-blue/5 blur-3xl" />
 
-      <div className="container relative z-10">
+      <div className="font-sans container relative z-10">
         <SectionTitle
           eyebrow="Success Stories"
           eyebrowColor="orange"
@@ -832,17 +832,10 @@ function Testimonials() {
                 <p className="text-slate-700 leading-relaxed text-[15px] mb-6 flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="flex items-center gap-3 pt-5 border-t border-slate-100">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-orange/20"
-                  />
-                  <div>
-                    <div className="font-semibold text-slate-900">{t.name}</div>
-                    <div className="text-xs text-slate-500">{t.role}</div>
-                  </div>
-                </div>
+				<div className="pt-5 border-t border-slate-100 text-center">
+                  <div className="font-semibold text-slate-900">{t.name}</div>
+                  <div className="text-xs text-slate-500">{t.role}</div>
+				</div>
               </div>
             </SwiperSlide>
           ))}
@@ -1064,7 +1057,7 @@ function Footer() {
                 className="h-14 w-14 object-contain"
                 draggable="false"
               />
-              *<div className="flex flex-col leading-none">
+              <div className="flex flex-col leading-none">
                 <span className="font-brand font-extrabold tracking-[0.04em] text-[18px] text-white">
                   GLOBAL SKY GROUP
                 </span>
