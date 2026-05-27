@@ -12,7 +12,7 @@ import {
   Menu, X, ChevronDown, Phone, MessageCircle, MapPin, Mail, Globe,
   GraduationCap, Plane, FileCheck, Star, Users, Award, ShieldCheck,
   Heart, Sparkles, Target, Headphones, ArrowRight, Send, Facebook,
-  Instagram, Linkedin, Twitter, Youtube, ChevronRight, Quote, Clock,
+  Instagram, Linkedin, ChevronRight, Quote, Clock,
   CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -288,13 +288,13 @@ function Navbar() {
           <DesktopNav scrolled={scrolled} />
           <div className="hidden lg:flex items-center gap-3 xl:gap-5">
             <a
-              href="tel:+918140840069"
+              href="tel:+918238061444"
               className={`flex items-center gap-2.5 text-sm font-medium transition ${scrolled ? 'text-slate-700' : 'text-white'}`}
             >
               <div className={`w-9 h-9 rounded-full flex items-center justify-center transition ${scrolled ? 'bg-blue-50 text-brand-blue' : 'bg-white/15 text-white ring-1 ring-white/15'}`}>
                 <Phone className="w-4 h-4" />
               </div>
-              <span className="hidden xl:inline whitespace-nowrap font-semibold tracking-tight">+91 8140 840 069</span>
+              <span className="hidden xl:inline whitespace-nowrap font-semibold tracking-tight">+91 8238 061 444</span>
             </a>
             <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full h-11 px-5 xl:px-6 text-[13px] xl:text-sm shadow-soft hover:shadow-premium transition-all whitespace-nowrap">
               Book Consultation
@@ -385,8 +385,8 @@ function Navbar() {
                 ))}
               </nav>
               <div className="p-5 border-t mt-2 space-y-3">
-                <a href="tel:+918140840069" className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 text-brand-blue font-medium">
-                  <Phone className="w-4 h-4" /> +91 8140 840 069
+                <a href="tel:+918238061444" className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 text-brand-blue font-medium">
+                  <Phone className="w-4 h-4" /> +91 8238 061 444
                 </a>
                 <Button className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full py-6">
                   Book Free Consultation
@@ -1052,26 +1052,17 @@ function Footer() {
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
               <img
-				src="/logo-light-bg.png"
+				src="/logo-dark-bg.png"
                 alt=""
-                className="h-14 w-14 object-contain"
+                className="h-11 sm:h-12 lg:h-14 w-auto object-contain"
                 draggable="false"
               />
-              <div className="flex flex-col leading-none">
-                <span className="font-brand font-extrabold tracking-[0.04em] text-[18px] text-white">
-                  GLOBAL SKY GROUP
-                </span>
-                <span className="mt-1.5 font-sans font-medium italic text-[11.5px] tracking-tight text-white/70">
-                  Indian at heart. Global in mind.
-                </span>
-              </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Premium global mobility partner empowering Indian dreams across 31+ countries
-              through education, visa, and luxury travel solutions for over 18 years.
+              Global Sky Group is a professionally managed global mobility and traveel services organisation offering comprehensive solutions in Education, Visa Consulting and Tours & Travel across 31+ countries Worldwide.
             </p>
             <div className="flex items-center gap-2.5">
-              {[Facebook, Instagram, Linkedin, Twitter, Youtube].map((Icon, i) => (
+              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
@@ -1088,7 +1079,7 @@ function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-white font-semibold mb-5 text-sm tracking-wider uppercase">Quick Links</h4>
             <ul className="space-y-2.5 text-sm">
-              {['Home', 'About Us', 'Services', 'Blog', 'Career', 'Contact'].map((l) => (
+              {['About Us', 'Study Aboard', 'Visa Services', 'Tours & Travel', 'Blog', 'Career', 'Contact'].map((l) => (
                 <li key={l}>
                   <a href="#" className="text-slate-400 hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
                     <ChevronRight className="w-3 h-3 text-brand-orange opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
@@ -1100,10 +1091,40 @@ function Footer() {
           </div>
 
           {/* Destinations */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h4 className="text-white font-semibold mb-5 text-sm tracking-wider uppercase">Study Destinations</h4>
             <ul className="space-y-2.5 text-sm">
               {['United Kingdom', 'United States', 'Canada', 'Australia', 'New Zealand', 'Europe'].map((l) => (
+                <li key={l}>
+                  <a href="#" className="text-slate-400 hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                    <ChevronRight className="w-3 h-3 text-brand-orange opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+		   {/* Visa Services */}
+          <div className="lg:col-span-2">
+            <h4 className="text-white font-semibold mb-5 text-sm tracking-wider uppercase">Visa Services</h4>
+            <ul className="space-y-2.5 text-sm">
+              {['Tourist Visa', 'Business Visa', 'Visitor Visa', 'Family Visa', 'Student Visa', 'Visa Assessment'].map((l) => (
+                <li key={l}>
+                  <a href="#" className="text-slate-400 hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                    <ChevronRight className="w-3 h-3 text-brand-orange opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tours & Travel */}
+          <div className="lg:col-span-2">
+            <h4 className="text-white font-semibold mb-5 text-sm tracking-wider uppercase">Tours & Travel</h4>
+            <ul className="space-y-2.5 text-sm">
+              {['Europe Tours', 'Dubai Packages', 'Honeymoon Trips', 'Family Holidays', 'Group Tours', 'Corporate Travel'].map((l) => (
                 <li key={l}>
                   <a href="#" className="text-slate-400 hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
                     <ChevronRight className="w-3 h-3 text-brand-orange opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
@@ -1121,12 +1142,12 @@ function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-brand-orange mt-1 flex-shrink-0" />
                 <span className="text-slate-400">
-                  301, Premium Tower, Ashram Road,<br />Ahmedabad, Gujarat 380009
+                  523, Silver Radiance 2, Science City Road, Gota,<br />Ahmedabad, Gujarat 380009
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                <a href="tel:+918140840069" className="text-slate-300 hover:text-brand-orange">+91 8140 840 069</a>
+                <a href="tel:+918238061444" className="text-slate-300 hover:text-brand-orange">+91 8238 061 444</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" />
@@ -1141,8 +1162,6 @@ function Footer() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a href="#" className="hover:text-brand-orange transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-brand-orange transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-brand-orange transition-colors">Refund Policy</a>
-            <a href="#" className="hover:text-brand-orange transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
@@ -1157,7 +1176,7 @@ function Footer() {
 function FloatingWhatsApp() {
   return (
     <motion.a
-      href="https://wa.me/918140840069"
+      href="https://wa.me/918238061444"
       target="_blank"
       rel="noreferrer"
       initial={{ scale: 0, opacity: 0 }}
