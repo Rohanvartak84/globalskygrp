@@ -491,12 +491,11 @@ function Hero() {
               className="bg-white/10 border-white/30 backdrop-blur-md text-white hover:bg-white hover:text-brand-green font-semibold rounded-full px-8 py-6 text-base transition-all"
             >
             <a
-                href="https://wa.me/918140840069"
+                href="https://wa.me/918238061444"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center mr-1.5"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="mr-1.5 w-4 h-4" />
                 Chat on WhatsApp
               </a>
 	       </Button>
