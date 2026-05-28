@@ -1045,6 +1045,65 @@ function ConsultationCTA() {
 }
 
 /* ------------------------------------------------------------------ */
+/* FAQ SECTION                                                         */
+/* ------------------------------------------------------------------ */
+
+function FAQSection() {
+  const faqs = [
+    {
+      q: 'How do I book a free consultation?',
+      a: 'Click any "Book Consultation" button on the page and fill the short form. Our team will contact you within 24 hours.',
+    },
+    {
+      q: 'Do you provide support for both study and visa services?',
+      a: 'Yes. We support study abroad admissions, visa documentation, interview preparation, and end-to-end guidance.',
+    },
+    {
+      q: 'Can I get assistance for tours and travel as well?',
+      a: 'Absolutely. We provide curated tours, family holiday planning, honeymoon packages, and visa-assisted travel options.',
+    },
+    {
+      q: 'Is the consultation really free?',
+      a: 'Yes. The first consultation is complimentary and includes a personalized roadmap based on your profile.',
+    },
+    {
+      q: 'Do you work with clients outside Ahmedabad?',
+      a: 'Yes, we work with clients across India through online and phone consultations.',
+    },
+  ];
+
+  return (
+    <section id="faq" className="py-20 lg:py-24 bg-brand-bg">
+      <div className="container">
+        <div className="max-w-3xl mx-auto text-center mb-10 lg:mb-12">
+          <SectionEyebrow color="blue">Frequently Asked Questions</SectionEyebrow>
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-slate-900 mt-4">
+            Everything you want to know
+          </h2>
+        </div>
+
+        <div className="max-w-4xl mx-auto space-y-3">
+          {faqs.map((item) => (
+            <details
+              key={item.q}
+              className="group rounded-2xl border border-slate-200 bg-white shadow-soft open:shadow-premium transition-all"
+            >
+              <summary className="list-none cursor-pointer select-none px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4">
+                <span className="text-slate-900 font-semibold text-[15px] sm:text-base">{item.q}</span>
+                <ChevronDown className="w-4 h-4 text-brand-blue shrink-0 transition-transform duration-200 group-open:rotate-180" />
+              </summary>
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-slate-600 leading-relaxed">
+                {item.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* FOOTER                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -1216,6 +1275,7 @@ function App() {
       <Testimonials />
       <Partners />
       <ConsultationCTA />
+	  <FAQSection />
       <Footer />
       <FloatingWhatsApp />
     </main>
