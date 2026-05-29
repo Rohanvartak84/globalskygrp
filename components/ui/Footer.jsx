@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {['About Us', 'Study Aboard', 'Visa Services', 'Tours & Travel', 'Blog', 'Career', 'Contact'].map((l) => (
                 <li key={l}>
-                  <a href="#" className="text-slate-400 hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                  <a href="/about" className="text-slate-400 hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
                     <ChevronRight className="w-3 h-3 text-brand-orange opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                     {l}
                   </a>
