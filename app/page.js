@@ -226,18 +226,15 @@ function Hero() {
             transition={{ delay: 0.85, duration: 0.7 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
-            <Button
-              size="lg"
-              className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full px-8 py-6 text-base shadow-premium hover:scale-[1.02] transition-all group"
-            >
-              <a href="#contact">Book Free Consultation</a>
-              <ArrowRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
+          <a href="/#contact"
+              className="group inline-flex items-center justify-center rounded-full bg-brand-orange px-8 py-4 text-base font-semibold text-white shadow-premium transition-all hover:scale-[1.02] hover:bg-brand-orange-dark">Book Free Consultation
+            <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" />
+		 </a>
+	        <Button
               size="lg"
               asChild
 			  variant="outline"
-              className="bg-white/10 border-white/30 backdrop-blur-md text-white hover:bg-white hover:text-brand-green font-semibold rounded-full px-8 py-6 text-base transition-all"
+              className="bg-white/10 border-white/30 backdrop-blur-md text-white hover:bg-white hover:text-brand-green font-semibold rounded-full px-8 py-7 text-base transition-all"
             >
             <a
                 href="https://wa.me/918238061444"
