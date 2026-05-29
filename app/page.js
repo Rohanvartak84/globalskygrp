@@ -425,7 +425,7 @@ function Stats() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="text-center text-white min-w-0"
             >
-              <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-2 bg-gradient-to-br from-white via-white to-brand-orange/80 bg-clip-text text-transparent">
+              <div className="font-display text-[clamp(2.25rem,10vw,4.5rem)] sm:text-6xl lg:text-7xl leading-none font-bold tracking-[-0.04em] whitespace-nowrap mb-2 bg-gradient-to-br from-white via-white to-brand-orange/80 bg-clip-text text-transparent">
                 <Counter to={s.value} suffix={s.suffix} />
               </div>
               <div className="text-white/75 text-sm sm:text-base font-medium tracking-wide uppercase">
