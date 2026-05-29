@@ -159,9 +159,7 @@ export default function Navbar() {
               </div>
               <span className="hidden xl:inline whitespace-nowrap font-semibold tracking-tight">+91 8238 061 444</span>
             </a>
-            <Button className="bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full h-11 px-5 xl:px-6 text-[13px] xl:text-sm shadow-soft hover:shadow-premium transition-all whitespace-nowrap">
-              <a href='#contact'>Book Consultation</a>
-            </Button>
+              <a href='#contact' className="inline-flex h-10 2xl:h-11 items-center justify-center rounded-full bg-brand-orange px-3.5 text-[11px] font-semibold text-white shadow-soft transition-all hover:bg-brand-orange-dark hover:shadow-premium xl:h-10 xl:px-4 xl:text-[12px] 2xl:px-6 2xl:text-sm whitespace-nowrap">Book Consultation</a>
           </div>
           <button
             onClick={() => setMobileOpen(true)}
@@ -251,9 +249,9 @@ export default function Navbar() {
                 <a href="tel:+918238061444" className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 text-brand-blue font-medium">
                   <Phone className="w-4 h-4" /> +91 8238 061 444
                 </a>
-                <Button className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold rounded-full py-6">
-                  <a href="#contact" onClick={() => setMobileOpen(false)}>Book Free Consultation</a>
-                </Button>
+                  <a href="/#contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-flex w-full items-center justify-center rounded-full bg-brand-orange px-6 py-4 font-semibold text-white transition-colors hover:bg-brand-orange-dark">Book Free Consultation</a>
               </div>
             </motion.aside>
           </>
