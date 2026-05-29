@@ -415,7 +415,7 @@ function Stats() {
         style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(245,166,35,0.4) 0%, transparent 40%), radial-gradient(circle at 80% 50%, rgba(88,185,71,0.3) 0%, transparent 40%)' }}
       />
       <div className="container relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-8 lg:gap-6">
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}
@@ -423,7 +423,7 @@ function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="text-center text-white"
+              className="text-center text-white min-w-0"
             >
               <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-2 bg-gradient-to-br from-white via-white to-brand-orange/80 bg-clip-text text-transparent">
                 <Counter to={s.value} suffix={s.suffix} />
