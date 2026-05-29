@@ -5,6 +5,7 @@ import { MessageCircle, ArrowRight, ShieldCheck, Users, Award, Globe, Target, Ch
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 
 const ABOUT_HERO_IMAGE = 'https://images.unsplash.com/photo-1712479667983-9f2872d33fb9?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
@@ -117,6 +118,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+	  <FloatingWhatsApp />
       <Footer />
     </main>
   );
