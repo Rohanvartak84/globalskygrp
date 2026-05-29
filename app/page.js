@@ -23,6 +23,7 @@ import {
 
 import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
+import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 /* ------------------------------------------------------------------ */
 /* DATA                                                                */
 /* ------------------------------------------------------------------ */
@@ -857,24 +858,6 @@ function FAQSection() {
 /* FLOATING WHATSAPP                                                   */
 /* ------------------------------------------------------------------ */
 
-function FloatingWhatsApp() {
-  return (
-    <motion.a
-      href="https://wa.me/918238061444"
-      target="_blank"
-      rel="noreferrer"
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 1.5, type: 'spring' }}
-      whileHover={{ scale: 1.08 }}
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-green shadow-premium flex items-center justify-center group"
-      aria-label="WhatsApp"
-    >
-      <span className="absolute inset-0 rounded-full bg-brand-green animate-ping opacity-25" />
-      <MessageCircle className="w-6 h-6 text-white relative" />
-    </motion.a>
-  );
-}
 
 /* ------------------------------------------------------------------ */
 /* APP                                                                 */
